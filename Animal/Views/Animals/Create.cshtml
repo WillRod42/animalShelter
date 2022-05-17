@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Animal.Models.AnimalObject
+
+<h4>Add a new Animal</h4>
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name)
+  @Html.LabelFor(model => model.Breed)
+  @Html.TextBoxFor(model => model.Breed)
+  @Html.LabelFor(model => model.IsMale)
+  @Html.CheckBoxFor(model => model.IsMale)
+  @Html.LabelFor(model => model.TypeId)
+  @Html.DropDownListFor(model => model.TypeId, (IEnumerable<SelectListItem>)ViewBag.types, "Select Type")
+  <input type="submit" value="Enter New Animal" />
+}
+<p>@Html.ActionLink("Show all animals", "Index")</p>
+

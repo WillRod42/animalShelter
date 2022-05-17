@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Animal.Models;
+@model List<Animal.Models.AnimalType>;
+
+<h1>Animal Types</h1>
+
+<ul>
+  @foreach(AnimalType animalType in Model)
+  {
+    <li>@animalType.Type</li>
+  }
+</ul>
+
+<p>@Html.ActionLink("Add new animal type", "Create")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>

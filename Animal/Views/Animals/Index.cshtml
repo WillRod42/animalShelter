@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Animal.Models;
+@model List<Animal.Models.AnimalObject>;
+
+<h1>Animals</h1>
+
+<ul>
+  @foreach(AnimalObject animal in Model)
+  {
+    <li>@Html.ActionLink($"{@animal.Name}", "Details", new {id = animal.Id})</li>
+  }
+</ul>
+
+<p>@Html.ActionLink("Add new animal", "Create")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>

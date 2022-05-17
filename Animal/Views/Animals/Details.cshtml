@@ -1,0 +1,14 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Animal.Models.AnimalObject
+
+<h2>Animal Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+<h3>@Html.DisplayNameFor(model => model.Breed): @Html.DisplayFor(model => model.Breed)</h3>
+<h3>@Html.DisplayNameFor(model => model.IsMale): @Html.DisplayFor(model => model.IsMale)</h3>
+<h3>@Html.DisplayNameFor(model => model.DateOfArival): @Html.DisplayFor(model => model.DateOfArival)</h3>
+<h3>Type: @ViewBag.animalType.Type</h3>
+<p>@Html.ActionLink("Back to list", "Index")</p>
